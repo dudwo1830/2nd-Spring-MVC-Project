@@ -1,0 +1,181 @@
+@charset "UTF-8";
+.myCloudBody{
+	width:1100px;
+	height:auto;
+}
+
+.P2PBody{
+	width:100%;
+	height:auto;
+	text-align: center;
+}
+.P2PBody table{
+	padding:10px;
+	font-size: 120%;
+}
+.P2PBody td{
+	border:1px solid;
+	padding-top:2px;
+	padding-bottom:2px;
+}
+.P2PBody td img{
+	width:40px;
+	height:40px;
+}
+.P2PBody a:not([href]){
+	color:#25ae88;
+	text-decoration: none;
+	cursor: pointer;
+}
+.listMyCloud{
+	padding: 10px;
+	border:2px solid black;
+	width:70%;
+	min-width:600px;
+	max-width:900px;
+	height: auto;
+	float:right;
+	margin-left: 2%;
+	display: block;
+}
+.listMyCloud img{
+	padding:3px;
+	width:98px;
+	height: 98px;
+	float: left;
+	vertical-align: bottom;
+}
+.myFiles {
+	border: 1px solid #92AAB0;
+	height: auto;
+}
+.myFiles p{
+	margin:0;
+}
+.title{
+	font-weight: bold;
+}
+/* P2P.jsp */
+.searchP2P{
+	text-align: center;
+}
+.listP2P{
+	border:1px solid black;
+	width:100%;
+	height: auto;
+}
+.listP2P tr{
+	text-align: center;
+}
+.listP2P .tdShort{
+	width:8%;
+}
+.listP2P .tdMiddle{
+	width:10%;
+	min-width:285px;
+}
+.listP2P .tdRarge{
+	width:50%;
+	font-family: "나눔고딕코딩";
+}
+/* 파일 업로드 */
+.dragAndDropDiv {
+	border: 2px dashed #92AAB0;
+	min-width: 80px;
+	max-width: 280px;
+	height: 150px;
+	color: #92AAB0;
+	text-align: center;
+	vertical-align: middle;
+	padding: 10px;
+	float: left;
+	top: 232px;
+	margin-left: 20px;
+}
+.dragAndDropDiv span{
+	font-size: 150%;
+	word-break: keep-all;	
+}
+.warning{
+	width: 280px;
+	margin-left: 20px;
+}
+.warning span{
+	font-weight:bold;
+	word-break: keep-all;
+	color: red;
+}
+.progressBar {
+	width: 200px;
+	height: 22px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	overflow: hidden;
+	display: inline-block;
+	margin: 0px 10px 5px 5px;
+	vertical-align: top;
+}
+
+.progressBar div {
+	height: 100%;
+	color: #fff;
+	text-align: center;
+	line-height: 22px;
+	/* same as #progressBar height if we want text middle aligned */
+	width: 0;
+	background-color: #0ba1b5;
+	border-radius: 3px;
+}
+#statusBody{
+	width:280px;
+	min-height:25px;
+	display: block;
+	margin-left: 20px;
+}
+.statusbar {
+	border-top: 1px solid #A9CCD1;
+	min-height: 25px;
+	width: 280px;
+	padding: 10px 10px 0px 10px;
+	vertical-align: top;
+	float:right;
+	position: relative;
+}
+
+.statusbar:nth-child(odd) {
+	display:none;
+}
+
+.filename {
+	display: inline-block;
+	vertical-align: top;
+	width: 250px;
+}
+
+.filesize {
+	display: inline-block;
+	vertical-align: top;
+	color: #30693D;
+	width: 100px;
+	margin-left: 10px;
+	margin-right: 5px;
+}
+.filedate{
+	display: inline-block;
+	vertical-align: top;
+	width:250px;
+}
+.abort {
+	background-color: #A8352F;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	border-radius: 4px;
+	display: inline-block;
+	color: #fff;
+	font-family: arial;
+	font-size: 13px;
+	font-weight: normal;
+	padding: 4px 15px;
+	cursor: pointer;
+	vertical-align: top
+}

@@ -1,0 +1,80 @@
+@charset "UTF-8";
+.login_body {
+	z-index:1;
+	position:relative;
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.login_body_login {
+    display: table-cell;
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    top: 20%;
+}
+
+.login_div_1 {
+    width: 100%;
+    height: 40px;
+}
+
+.login_div_2 {
+    width: 50%;
+    height: 30px;
+    margin-left: 25%;
+}
+.login_div_sav{
+    width: 50%;
+    height: 30px;
+    margin-left: 25%;
+    text-align: left;
+}
+.login_div_half {
+    width: 50%;
+    height: 40px;
+    float: left;
+}
+
+.login_input {
+    border: 2px solid plum;
+    outline-color: red;
+    width: 50%;
+    height: 75%;
+    font-size: 120%;
+    padding-left: 1%;
+}
+
+.login_submit {
+    background-color: greenyellow;
+    border: 2px solid plum;
+    width: 51%;
+    height: 100%;
+    cursor: pointer;
+    outline-color: blue;
+    font-size: 120%;
+}
+
+.login_join {
+    background-color: transparent;
+    border: 2px solid plum;
+    width: 51%;
+    height: 100%;
+    cursor: pointer;
+    outline-color: blue;
+    font-size: 120%;
+}
+
+.login_span {
+    font-size: 100%;
+}
+
+.login_a1{
+    float: left;
+}
+
+.login_a2 {
+    float: right;
+}

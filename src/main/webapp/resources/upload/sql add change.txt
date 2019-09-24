@@ -1,0 +1,26 @@
+alter table user add upoint int default 1000;
+alter table user change upoint upoint int default 100;
+alter table user change uadd uad varchar(20) default 'Y';
+select * from cloud
+where cuid = 'dudwo1830@naver.com' and
+cid <= 140 and
+cid > count(cuid = 'dudwo1830@naver.com')-20
+order by cid desc;
+
+select count(*) from cloud
+where cid >
+
+select * from cloud
+where cuid = 'dudwo1830@naver.com' and
+cid <= 142 and 
+cid > 189-142 - 20
+order by cid desc;
+
+select * from cloud 
+where cuid = 'abc' and
+cid <= 150 and 
+cid > (select count(cuid = 'abc') from cloud)- 20 order by cid desc;
+
+select * from cloud
+where cuid = 'abc'
+limit 0, 20;

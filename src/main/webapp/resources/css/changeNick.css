@@ -1,0 +1,59 @@
+@charset "UTF-8";
+.changeNick_body {
+    display: table;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+
+.changeNick_body_changeNick {
+    display: table-cell;
+    width: 100%;
+    height: 40%;
+    position: absolute;
+    top: 20%;
+}
+
+.changeNick_div_1 {
+    width: 100%;
+    height: 40px;
+}
+
+.changeNick_div_2 {
+    width: 50%;
+    height: 30px;
+    text-align: right;
+    margin-left: 25%;
+}
+
+.changeNick_div_half {
+    width: 50%;
+    height: 40px;
+    float: left;
+}
+
+.changeNick_input {
+    border: 2px solid plum;
+    outline-color: red;
+    width: 50%;
+    height: 75%;
+    font-size: 120%;
+    padding-left: 1%;
+}
+
+.changeNick_submit {
+    background-color: #aaaaaa;
+    border: 2px solid plum;
+    width: 51%;
+    height: 100%;
+    cursor: pointer;
+    outline-color: blue;
+    font-size: 120%;
+}
+/* ajax관련 */
+#checkem, #checkpw, #checkpw_re, #checknick{
+	background-color:#FFCECE;
+}
+.email, .pass, .pass_re, .nick{
+	color:#f00;
+}

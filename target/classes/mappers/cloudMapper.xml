@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+	
+<mapper namespace="com.LYJ.mapper.CloudMapper">
+	<!-- 전체 목록 -->
+	<select id="listAll" resultType="CloudVO">
+		select * from cloud order by cid desc limit 0, 20 
+	</select>
+	<!-- 전체 목록 next -->
+	<select id="nextListAll" resultType="CloudVO">
+		<![CDATA[
+			select * from cloud 
+			where cid <= #{cidToStart} and 
+			cid > #{cidToStart} - 20 order by cid desc
+		]]>
+	</select>
+	<!-- 추가 -->
+	<insert id="cwrite">
+		insert into 
+		cloud(cfileName, cfileSize, cuid, cunickName, coriginName, ext) 
+		values(#{cfileName}, #{cfileSize}, #{cuid}, #{cunickName}, #{coriginName}, #{ext})
+	</insert>
+	<!-- 제거 -->
+	<delete id="cdelete">
+		delete from cloud where cid = #{cid}
+	</delete>
+	<!-- 내 파일 목록 -->
+	<select id="getMyCloud" resultType="CloudVO">
+		select * from cloud where cuid = #{uid} order by cid desc limit 0, 20 
+	</select>
+	<!-- 내 파일 다음목록 -->
+	<select id="nextList" parameterType="map" resultType="CloudVO">
+		select * from cloud 
+		where cuid = #{cuid}
+		<trim prefix="and">
+			<if test="keyword != null">
+				coriginName like concat('%', #{keyword}, '%')
+			</if>
+		</trim>
+		order by cid desc limit #{cidToStart}, 20;
+	</select>
+	<!-- 내 클라우드 검색 -->
+	<select id="mySearchList" parameterType="map" resultType="CloudVO">
+		select * from cloud
+		where cuid = #{cuid}
+		<trim prefix="and">
+			<if test="keyword != null and keyword != ''">
+				coriginName like concat('%', #{keyword}, '%')
+			</if>
+		</trim>
+		order by cid desc limit 0, 20;
+	</select>
+	<!-- P2P 스크롤페이징 -->
+	<select id="nextAllList" parameterType="map" resultType="CloudVO">
+		select * from cloud
+		where cid <![CDATA[>]]>0
+		<trim prefix="and">
+			<if test="searchType == 'coriginName' and keyword != null and keyword != ''">
+				coriginName like concat('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'cuid' and keyword != null and keyword != ''">
+				cuid like concat('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'cunickName' and keyword != null and keyword != ''">
+				cunickName like concat('%', #{keyword}, '%')
+			</if>
+		</trim>
+		order by cid desc limit ${cidToStart}, 20;
+	</select>
+	<!-- 검색2 -->
+	<select id="listSearch" parameterType="map" resultType="CloudVO">
+		select * from cloud
+		where cid <![CDATA[>]]> 0
+		<trim prefix="and">
+			<if test="searchType == 'coriginName' and keyword != null and keyword != ''">
+				coriginName like concat('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'cuid' and keyword != null and keyword != ''">
+				cuid like concat('%', #{keyword}, '%')
+			</if>
+			<if test="searchType == 'cunickName' and keyword != null and keyword != ''">
+				cunickName like concat('%', #{keyword}, '%')
+			</if>
+		</trim>
+		order by cid desc limit 0, 20;
+	</select>
+</mapper>
